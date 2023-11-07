@@ -1,4 +1,3 @@
-#if 0
 
 #include <graphics.h>
 #include <conio.h>
@@ -27,8 +26,8 @@ int main(void) {
         get_key();
         if (check_key()) {
             show_board();
-            settextstyle(32, 0, _T("ËÎÌå"));
-            outtextxy(SIZE * GRID_SIZE / 2, SIZE * GRID_SIZE / 2, role == 1 ? _T("ºÚ×Ó·½Ê¤Àû£¡") : _T("°××Ó·½Ê¤Àû£¡"));
+            settextstyle(32, 0, _T("å®‹ä½“"));
+            outtextxy(SIZE * GRID_SIZE / 2, SIZE * GRID_SIZE / 2, role == 1 ? _T("é»‘å­æ–¹èƒœåˆ©ï¼") : _T("ç™½å­æ–¹èƒœåˆ©ï¼"));
             _getch();
             closegraph();
             return 0;
@@ -54,8 +53,8 @@ void get_key(void) {
             int y = (msg.y - OFFSET + GRID_SIZE / 2) / GRID_SIZE;
             if (x >= 0 && x <= SIZE && y >= 0 && y <= SIZE && board[x][y] == 0) {
                 board[x][y] = role;
-                key_x = x;  // ¸üÐÂ key_x µÄÖµ
-                key_y = y;  // ¸üÐÂ key_y µÄÖµ
+                key_x = x;  // æ›´æ–° key_x çš„å€¼
+                key_y = y;  // æ›´æ–° key_y çš„å€¼
                 show_board();
                 return;
             }
@@ -109,12 +108,3 @@ bool check_key(void) {
 
 
 
-
-
-
-
-
-
-
-
-#endif
