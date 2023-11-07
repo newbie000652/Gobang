@@ -1,4 +1,3 @@
-#if 0
 
 #include <graphics.h>
 #include <conio.h>
@@ -27,10 +26,10 @@ int main(void) {
         get_key();
         if (check_key()) {
             show_board();
-            settextstyle(32, 0, _T("宋体"));
+            settextstyle(32, 0, _T("瀹嬩綋"));
             setbkcolor(role == 1 ? BLACK : WHITE);
             settextcolor(role == 1 ? WHITE : BLACK);
-            outtextxy(SIZE * GRID_SIZE / 2, SIZE * GRID_SIZE / 2, role == 1 ? _T("黑子方胜利！") : _T("白子方胜利！"));
+            outtextxy(SIZE * GRID_SIZE / 2, SIZE * GRID_SIZE / 2, role == 1 ? _T("榛戝瓙鏂硅儨鍒╋紒") : _T("鐧藉瓙鏂硅儨鍒╋紒"));
             _getch();
             closegraph();
             return 0;
@@ -110,5 +109,3 @@ bool check_key(void) {
 
 
 
-
-#endif
