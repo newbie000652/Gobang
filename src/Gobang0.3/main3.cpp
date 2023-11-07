@@ -1,17 +1,15 @@
-#if 0
-
 
 #include <graphics.h>
 #include <conio.h>
 #include <stdio.h>
 
 #define SIZE 15
-#define BOARD_SIZE (SIZE + 1)  // 新增这行代码
+#define BOARD_SIZE (SIZE + 1)  // 鏂板杩欒浠ｇ爜
 #define GRID_SIZE 40
 #define OFFSET 30  
 #define LINE_WIDTH 2
 
-int board[BOARD_SIZE][BOARD_SIZE] = { 0 };  // 修改这行代码
+int board[BOARD_SIZE][BOARD_SIZE] = { 0 };  // 淇敼杩欒浠ｇ爜
 int key_x = SIZE / 2, key_y = SIZE / 2;
 int role = 1;
 
@@ -39,8 +37,8 @@ int main(void) {
 }
 
 void init_board(void) {
-    for (int i = 0; i < BOARD_SIZE; i++) {  // 修改这行代码
-        for (int j = 0; j < BOARD_SIZE; j++) {  // 修改这行代码
+    for (int i = 0; i < BOARD_SIZE; i++) {  // 淇敼杩欒浠ｇ爜
+        for (int j = 0; j < BOARD_SIZE; j++) {  // 淇敼杩欒浠ｇ爜
             board[i][j] = 0;
         }
     }
@@ -51,13 +49,13 @@ void show_board(void) {
     cleardevice();
     setcolor(BLACK);
     setlinestyle(PS_SOLID, LINE_WIDTH);
-    for (int i = 0; i < BOARD_SIZE; i++) {  // 修改这行代码
+    for (int i = 0; i < BOARD_SIZE; i++) {  // 淇敼杩欒浠ｇ爜
         line(OFFSET, OFFSET + i * GRID_SIZE, SIZE * GRID_SIZE + OFFSET, OFFSET + i * GRID_SIZE);
         line(OFFSET + i * GRID_SIZE, OFFSET, OFFSET + i * GRID_SIZE, SIZE * GRID_SIZE + OFFSET);
     }
     rectangle(OFFSET, OFFSET, SIZE * GRID_SIZE + OFFSET, SIZE * GRID_SIZE + OFFSET);
-    for (int i = 0; i < BOARD_SIZE; i++) {  // 修改这行代码
-        for (int j = 0; j < BOARD_SIZE; j++) {  // 修改这行代码
+    for (int i = 0; i < BOARD_SIZE; i++) {  // 淇敼杩欒浠ｇ爜
+        for (int j = 0; j < BOARD_SIZE; j++) {  // 淇敼杩欒浠ｇ爜
             if (board[i][j] == 1) {
                 setfillcolor(BLACK);
                 solidcircle(OFFSET + i * GRID_SIZE, OFFSET + j * GRID_SIZE, GRID_SIZE / 2 - 2);
@@ -96,10 +94,10 @@ bool check_key(void) {
     int dy[4] = { 1, 1, 1, 0 };
     for (int i = 0; i < 4; i++) {
         int count = 0;
-        for (int x = key_x, y = key_y; x >= 0 && y >= 0 && x < BOARD_SIZE && y < BOARD_SIZE && board[x][y] == role; x += dx[i], y += dy[i]) {  // 修改这行代码
+        for (int x = key_x, y = key_y; x >= 0 && y >= 0 && x < BOARD_SIZE && y < BOARD_SIZE && board[x][y] == role; x += dx[i], y += dy[i]) {  // 淇敼杩欒浠ｇ爜
             count++;
         }
-        for (int x = key_x - dx[i], y = key_y - dy[i]; x >= 0 && y >= 0 && x < BOARD_SIZE && y < BOARD_SIZE && board[x][y] == role; x -= dx[i], y -= dy[i]) {  // 修改这行代码
+        for (int x = key_x - dx[i], y = key_y - dy[i]; x >= 0 && y >= 0 && x < BOARD_SIZE && y < BOARD_SIZE && board[x][y] == role; x -= dx[i], y -= dy[i]) {  // 淇敼杩欒浠ｇ爜
             count++;
         }
         if (count >= 5) {
@@ -109,5 +107,3 @@ bool check_key(void) {
     return false;
 }
 
-
-#endif
