@@ -1,7 +1,6 @@
-#if 0
 
-// µÍÅä°æ±¾Îå×ÓÆå
-#pragma warning(disable : 4996)		// ¹Ø±ÕÎ¢Èí°²È«º¯Êı¾¯¸æ¡£
+// ä½é…ç‰ˆæœ¬äº”å­æ£‹
+#pragma warning(disable : 4996)		// å…³é—­å¾®è½¯å®‰å…¨å‡½æ•°è­¦å‘Šã€‚
 #include <stdio.h>
 #include <stdbool.h>
 #include <stdlib.h>
@@ -12,11 +11,11 @@ char board[15][15];
 char key_x = 7, key_y = 7;
 char role = '@';
 
-void init_board(void);		// ³õÊ¼»¯ÆåÅÌ
-void show_board(void);		// ÏÔÊ¾ÆåÅÌ
-void get_key(void);			// Âä×Ó
-int count_key(int go_x, int go_y);	// ¼ì²éÒ»¸ö·½ÏòÉÏÓĞ¶àÉÙ¸öÏàÍ¬µÄÆå×Ó
-bool check_key(void);		// ¼ì²éÎå×ÓÁ¬Öé
+void init_board(void);		// åˆå§‹åŒ–æ£‹ç›˜
+void show_board(void);		// æ˜¾ç¤ºæ£‹ç›˜
+void get_key(void);			// è½å­
+int count_key(int go_x, int go_y);	// æ£€æŸ¥ä¸€ä¸ªæ–¹å‘ä¸Šæœ‰å¤šå°‘ä¸ªç›¸åŒçš„æ£‹å­
+bool check_key(void);		// æ£€æŸ¥äº”å­è¿ç 
 
 int main(void)
 {
@@ -26,7 +25,7 @@ int main(void)
 		get_key();
 		if (check_key()) {
 			show_board();
-			printf("%cÊ¤Àû£¡\n", role);
+			printf("%cèƒœåˆ©ï¼\n", role);
 			return 0;
 		}
 		role = (role == '@' ? '$' : '@');
@@ -56,7 +55,7 @@ void update_board_and_show(char new_char) {
 	char old_char = board[key_x][key_y];
 	board[key_x][key_y] = '#';
 	show_board();
-	printf("Çë %c ÏÂÆå£º\n", role);
+	printf("è¯· %c ä¸‹æ£‹ï¼š\n", role);
 	board[key_x][key_y] = old_char;
 }
 
@@ -72,7 +71,7 @@ void move_key(int delta_x, int delta_y) {
 }
 
 void get_key(void) {
-	printf("Çë %c ÏÂÆå£º\n", role);
+	printf("è¯· %c ä¸‹æ£‹ï¼š\n", role);
 	while (1) {
 		switch (getch()) {
 		case 'w': move_key(-1, 0); break;
@@ -105,5 +104,3 @@ bool check_key(void) {
 }
 
 
-
-#endif
