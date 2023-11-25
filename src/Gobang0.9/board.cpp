@@ -66,9 +66,9 @@ void draw_sidebar(void) {
     solidrectangle(SIZE * GRID_SIZE + OFFSET * 2 + 20, SIZE * GRID_SIZE / 2, SIZE * GRID_SIZE + OFFSET * 2 + SIDEBAR_WIDTH - 20, SIZE * GRID_SIZE / 2 + 50);
 
 
-    settextstyle(32, 0, _T("ËÎÌå"));
+    settextstyle(32, 0, _T("å®‹ä½“"));
     settextcolor(GREEN);
-    outtextxy(SIZE * GRID_SIZE + OFFSET * 2 + 60, SIZE * GRID_SIZE / 2 + 10, _T("»ÚÆå"));
+    outtextxy(SIZE * GRID_SIZE + OFFSET * 2 + 60, SIZE * GRID_SIZE / 2 + 10, _T("æ‚”æ£‹"));
 
 
     setlinestyle(PS_SOLID, 5);
